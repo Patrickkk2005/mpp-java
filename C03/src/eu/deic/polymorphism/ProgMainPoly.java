@@ -84,7 +84,6 @@ public class ProgMainPoly {
         Cat objCat=new Cat(500);
         objCat.display();
 
-
         objA=cat;
         objA.makeSound();
         objA=tiger;

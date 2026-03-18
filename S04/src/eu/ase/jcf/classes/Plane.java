@@ -46,5 +46,6 @@ public class Plane implements Comparable<Plane>, Cloneable {
     }
 
     public void pri() {
+        
     }
 }

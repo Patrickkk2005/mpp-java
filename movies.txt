@@ -1,0 +1,6 @@
+Inception,SciFi,9,148,2010
+Titanic,Drama,8,195,1997
+Interstellar,SciFi,9,169,2014
+TheNotebook,Drama,7,123,2004
+Avengers,Action,8,150,2019
+IronMan,Action,8,126,2008

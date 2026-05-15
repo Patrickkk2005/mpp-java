@@ -1,0 +1,6 @@
+Math,Science,6,2022
+Physics,Science,5,2021
+OOP,ComputerScience,6,2023
+Algorithms,ComputerScience,7,2022
+History,Humanities,4,2020
+Philosophy,Humanities,3,2021

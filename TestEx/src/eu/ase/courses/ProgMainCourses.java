@@ -2,12 +2,12 @@ package eu.ase.courses;
 
 import java.io.*;
 import java.util.*;
+import java.util.concurrent.*;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 public class ProgMainCourses {
-    public static void main(String[] args) throws IOException, InterruptedException {
+    public static void main(String[] args) throws IOException, InterruptedException, ExecutionException {
         List<Course> courses = new ArrayList<>();
         BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("courses.txt")));
         String line;
@@ -99,5 +99,32 @@ public class ProgMainCourses {
         t3.start();
         t3.join();
 
+        List<Course> fiveCourses = courses;
+        Callable<List<Course>> f1 = () -> {
+            Predicate<Course> hCredit = (Course c) -> c.getCredits() > 5;
+            return fiveCourses.stream().filter(hCredit).collect(Collectors.toList());
+        };
+
+        Callable<Map<String, Double>> avCred = () ->{
+            Map<String, Double> aveCredits = new HashMap<>();
+            for (Map.Entry<String, List<Course>> entry : coursesByDesc.entrySet()) {
+                String courseName = entry.getKey();
+                List<Course> courseList = entry.getValue();
+                aveCredits.put(courseName, avgCred.process(courseList));
+            }
+            return aveCredits;
+        };
+
+        ExecutorService executor = Executors.newFixedThreadPool(2);
+        Future<List<Course>> future1 = executor.submit(f1);
+        Future<Map<String, Double>> future2 = executor.submit(avCred);
+
+        List<Course> filtRes = future1.get();
+        Map<String,Double> avgRes = future2.get();
+
+        System.out.println("Filtered: " + filtRes);
+        System.out.println("Avg credits: " + avgRes);
+
+        executor.shutdown();
     }
 }

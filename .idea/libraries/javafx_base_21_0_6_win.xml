@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="javafx-base-21.0.6-win">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Downloads/Resurse-20260530/javafx-base-21.0.6-win.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/Resurse-20260530/javafx-controls-21.0.6-win.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/Resurse-20260530/javafx-fxml-21.0.6-win.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/Resurse-20260530/javafx-graphics-21.0.6-win.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

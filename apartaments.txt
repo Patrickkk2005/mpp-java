@@ -1,0 +1,5 @@
+id;type;city;zone;area;price_sqm;discount
+A01;studio;Bucuresti;Titan;38;2200;0.05
+A02;2rooms;Cluj;Gheorgheni;54;2400;0.00
+A03;3rooms;Brasov;Avantgarden;72;2100;0.08
+A04;penthouse;Bucuresti;Pipera;120;3000;0.10

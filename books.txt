@@ -1,0 +1,5 @@
+id;type;title;author;pages;price;discount
+B01;novel;Dune;Herbert;412;29.99;0.10
+B02;textbook;Clean Code;Martin;464;49.99;0.00
+B03;novel;1984;Orwell;328;19.99;0.05
+B04;comic;Watchmen;Moore;416;24.99;0.15

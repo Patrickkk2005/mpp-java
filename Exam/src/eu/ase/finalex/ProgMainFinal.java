@@ -58,14 +58,16 @@ public class ProgMainFinal {
                 throw new RuntimeException(e);
             }
         });
+        serverThread.setDaemon(true);
         serverThread.start();
         Thread.sleep(300);
 
         Socket socket = new Socket("localhost", 50001);
         PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
-        ObjectInputStream in = new ObjectInputStream(new BufferedInputStream(socket.getInputStream()));
         out.println("GETLIST");
-        System.out.println(in.readLine());
+        ObjectInputStream in = new ObjectInputStream(new BufferedInputStream(socket.getInputStream()));
+        List<Book> serverBooks = (List<Book>) in.readObject();
+        System.out.println(serverBooks.toString());
         socket.close();
     }
 }

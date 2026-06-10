@@ -38,7 +38,7 @@ public class Utils {
         for (Book book : books) {
             out.write(book.toString());
             out.newLine();
-            out.write((int) book.finalPrice());
+            out.write(String.valueOf(book.finalPrice()));
         }
         out.close();
     }
@@ -46,7 +46,7 @@ public class Utils {
     public static List<Book> readBinaryBooks(String file) throws IOException, ClassNotFoundException {
         List<Book> books = new ArrayList<>();
         ObjectInputStream in = new ObjectInputStream(new BufferedInputStream(new FileInputStream(file)));
-        in.readObject();
+        books = (List<Book>) in.readObject();
         in.close();
         return books;
     }
@@ -62,7 +62,7 @@ public class Utils {
     }
 
     public static List<Book> getTop2(List<Book> books) {
-        return books.stream().sorted((a, b) -> Double.compare(b.getPrice(), a.getPrice())).limit(2).collect(Collectors.toList());
+        return books.stream().sorted((a, b) -> Double.compare(b.finalPrice(), a.finalPrice())).limit(2).collect(Collectors.toList());
     }
 
     public static List<Book> filterByAuthor(List<Book> books, String author) {

@@ -14,6 +14,7 @@ public class TCPServer {
     public TCPServer(int port) throws IOException {
         this.port = port;
         this.serverSocket = new ServerSocket(port);
+        this.books = Utils.readBooks("books.txt");
     }
 
     public void start() throws IOException {
@@ -32,13 +33,19 @@ public class TCPServer {
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
+                String command = null;
                 try {
-                    if(in.readLine().equals("GETLIST")){
+                    command = in.readLine();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+                try {
+                    if(command.equals("GETLIST")){
                         ObjectOutputStream oos = new ObjectOutputStream(new BufferedOutputStream(client.getOutputStream()));
                         oos.writeObject(books);
                         oos.flush();
                     }
-                    else if(in.readLine().equals("EXIT")){
+                    else if(command.equals("EXIT")){
                         client.close();
                         return;
                     }

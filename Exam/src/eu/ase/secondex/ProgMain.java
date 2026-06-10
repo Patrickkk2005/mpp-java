@@ -34,5 +34,8 @@ public class ProgMain {
         List<Apartament> top2Future = top2.get();
 
         executor.shutdown();
+
+        TCPServer server = new TCPServer(7997);
+        server.start();
     }
 }

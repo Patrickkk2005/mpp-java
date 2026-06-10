@@ -55,4 +55,9 @@ public abstract class Apartament implements Evaluabil {
     public double pretFinal() {
         return area * price_sqm * (1 - discount);
     }
+
+    @Override
+    public String toString() {
+        return id + ";" + type + ";" + city + ";" + zone + ";" + pretFinal();
+    }
 }

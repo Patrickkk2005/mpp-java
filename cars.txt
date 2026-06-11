@@ -1,0 +1,6 @@
+id;type;brand;city;year;price_day;discount
+C01;sedan;Toyota;Bucuresti;2020;120.0;0.10
+C02;suv;BMW;Cluj;2022;250.0;0.05
+C03;sedan;Dacia;Brasov;2019;80.0;0.00
+C04;electric;Tesla;Bucuresti;2023;300.0;0.15
+C05;suv;Audi;Cluj;2021;220.0;0.08

@@ -60,7 +60,7 @@ public class ProgMainFinal {
         });
         serverThread.setDaemon(true);
         serverThread.start();
-        Thread.sleep(300);
+        Thread.sleep(1000);
 
         Socket socket = new Socket("localhost", 50001);
         PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
